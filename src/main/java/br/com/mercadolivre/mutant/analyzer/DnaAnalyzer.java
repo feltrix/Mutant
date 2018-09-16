@@ -47,6 +47,10 @@ public class DnaAnalyzer {
 
     private boolean hasMutation(final Dna dna, final List<Integer> positions) {
 
+        if(positions.size()<4) {
+            return false;
+        }
+
         int count = 1;
         char last = '@';
 
