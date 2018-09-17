@@ -2,11 +2,14 @@ package br.com.mercadolivre.mutant.analyzer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
 import static br.com.mercadolivre.mutant.analyzer.Directions.*;
 
+
+@Component
 public class DnaAnalyzer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DnaAnalyzer.class);

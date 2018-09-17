@@ -1,6 +1,7 @@
 package br.com.mercadolivre.mutant.analyzer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Dna {
@@ -120,5 +121,27 @@ public class Dna {
 
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Dna dna1 = (Dna) o;
+
+        if (height != dna1.height) return false;
+        if (width != dna1.width) return false;
+        if (size != dna1.size) return false;
+        return Arrays.deepEquals(dna, dna1.dna);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.deepHashCode(dna);
+        result = 31 * result + height;
+        result = 31 * result + width;
+        result = 31 * result + size;
+        return result;
     }
 }
