@@ -4,16 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Stats {
 
-    private final Long countMutantDna;
-    private final Long countHumanDna;
+    private final long countMutantDna;
+    private final long countHumanDna;
     private final double ratio;
 
-    public Stats(final Long countMutantDna, final Long countHumanDna) {
-        this.countMutantDna = countMutantDna!=null?countMutantDna:0;
-        this.countHumanDna = countHumanDna!=null?countHumanDna:0;
-        long total = this.countMutantDna + this.countHumanDna;
+    public Stats(final long countMutantDna, final long countHumanDna) {
+        this.countMutantDna = countMutantDna;
+        this.countHumanDna = countHumanDna;
+        long total = countMutantDna + countHumanDna;
         if(total>0) {
-            this.ratio =  countMutantDna / total;
+            this.ratio =  countMutantDna / (double) total;
         }else{
             this.ratio = 0;
         }
