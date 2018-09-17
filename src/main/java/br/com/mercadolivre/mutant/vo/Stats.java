@@ -11,7 +11,7 @@ public class Stats {
     public Stats(final Long countMutantDna, final Long countHumanDna) {
         this.countMutantDna = countMutantDna!=null?countMutantDna:0;
         this.countHumanDna = countHumanDna!=null?countHumanDna:0;
-        long total = countMutantDna + countHumanDna;
+        long total = this.countMutantDna + this.countHumanDna;
         if(total>0) {
             this.ratio =  countMutantDna / total;
         }else{

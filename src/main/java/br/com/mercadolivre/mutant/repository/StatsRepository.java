@@ -28,10 +28,18 @@ public class StatsRepository {
 
     public Stats getStats() {
 
-        final Long mutantCount = redisTemplate.opsForValue().get(MUTANT_KEY);
-        final Long humanCount = redisTemplate.opsForValue().get(HUMAN_KEY);
+        final Long mutantCount = getValue(MUTANT_KEY);
+        final Long humanCount = getValue(HUMAN_KEY);
 
         return new Stats(mutantCount,humanCount);
+    }
+
+    private Long getValue(final String key){
+        final String value = redisTemplate.boundValueOps(key).get(0,-1);
+        if(value!=null && !value.isEmpty()) {
+            return Long.valueOf(value);
+        }
+        return 0L;
     }
 
 
