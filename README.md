@@ -1,7 +1,7 @@
 # Mutant
 A Spring Boot Application for an interview process
 
-##How to
+## How to
 
 Building and running, execute in project directory
 
