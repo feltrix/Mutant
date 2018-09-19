@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: "feltrix/mutant"
+    ports:
+     - "8080:8080"
+    volumes:
+     - .:/code
+  redis:
+    image: "redis"
